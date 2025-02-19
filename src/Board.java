@@ -16,15 +16,27 @@ public class Board {
         }
     }
 
-    public printBoard() {
-        System.out.println("H " + "|  ".repeat(8) )
-        System.out.println("G " + "|  ".repeat(8))
-        System.out.println("F " + "|  ".repeat(8))
-        System.out.println("E " + "|  ".repeat(8))
-        System.out.println("D " + "|  ".repeat(8))
-        System.out.println("C " + "|  ".repeat(8))
-        System.out.println("B " + "|  ".repeat(8))
-        System.out.println("A " + "|  ".repeat(8))
-        System.out.println("**" + "|  ".repeat(8))
+    //print a blank board
+    public void printBoardBlank() {
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("8 " + "|  ".repeat(9));
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("7 " + "|  ".repeat(9));
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("6 " + "|  ".repeat(9));
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("5 " + "|  ".repeat(9));
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("4 " + "|  ".repeat(9));
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("3 " + "|  ".repeat(9));
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("2 " + "|  ".repeat(9));
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("1 " + "|  ".repeat(9));
+        System.out.println("  " + "-".repeat(25));
+        System.out.println("   A  B  C  D  E  F  G  H");
     }
+
+    //print a board with all the pieces
 }

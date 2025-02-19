@@ -1,4 +1,4 @@
-public class Piece {
+abstract class Piece {
     private String type;
-
+    public
 }
