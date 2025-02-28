@@ -1,6 +1,6 @@
 abstract class Piece {
-    private String type;
-    private String color;
+    private final String type;
+    private final String color;
     private Position position;
 
     public Piece(String type, String color, Position position) {
