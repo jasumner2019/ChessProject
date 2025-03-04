@@ -2,11 +2,13 @@ abstract class Piece {
     private final String type;
     private final String color;
     private Position position;
+    private String symbol;
 
-    public Piece(String type, String color, Position position) {
+    public Piece(String type, String color, Position position, String symbol) {
         this.type = type;
         this.color = color;
         this.position = position;
+        this.symbol = symbol;
     }
 
     public String getType() {
@@ -23,6 +25,10 @@ abstract class Piece {
 
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    public String getSymbol() {
+        return symbol;
     }
 }
 

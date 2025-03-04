@@ -1,5 +1,5 @@
 public class Bishop extends Piece {
-    public Bishop(String type, String color, Position position) {
-        super(type, color, position);
+    public Bishop(String color, Position position) {
+        super("Bishop", color, position, "B");
     }
 }

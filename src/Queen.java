@@ -1,5 +1,5 @@
 public class Queen extends Piece {
-    public Queen(String type, String color, Position position) {
-        super(type, color, position);
+    public Queen(String color, Position position) {
+        super("Queen", color, position, "Q");
     }
 }

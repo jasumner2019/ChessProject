@@ -1,42 +1,37 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Board {
-    private HashMap<String, Integer> board = new HashMap<>();
-    private String columnNames = "ABCDEFGH";
-    private String rows = "12345678";
+    private Map<Position, Piece> pieces;
 
     public Board() {
-        // Constructor
-        initializeBoard();
+        this.pieces = new HashMap<>();
     }
 
-    private void initializeBoard() {
-        for (int i = 0; i < columnNames.length(); i++) {
-            board.put(String.valueOf(columnNames.charAt(i)), Integer.valueOf(String.valueOf(rows.charAt(i))));
+    public void addPiece(Piece piece) {
+        pieces.put(piece.getPosition(), piece);
+    }
+
+    public void removePiece(Position position) {
+        pieces.remove(position);
+    }
+
+    public void printBoard() {
+        System.out.println("  " + "-".repeat(41));
+        for (int rank = 8; rank >= 1; rank--) {
+            System.out.print(rank + " ");
+            for (char file = 'a'; file <= 'h'; file++) {
+                Position pos = new Position(String.valueOf(file), rank);
+                Piece piece = pieces.get(pos);
+                System.out.print("| " + (piece != null ? pieceToString(piece) : "  ") + " ");
+            }
+            System.out.println("|");
+            System.out.println("  " + "-".repeat(41));
         }
+        System.out.println("    A    B    C    D    E    F    G    H");
     }
 
-    //print a blank board
-    public void printBoardBlank() {
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("8 " + "|  ".repeat(9));
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("7 " + "|  ".repeat(9));
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("6 " + "|  ".repeat(9));
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("5 " + "|  ".repeat(9));
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("4 " + "|  ".repeat(9));
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("3 " + "|  ".repeat(9));
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("2 " + "|  ".repeat(9));
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("1 " + "|  ".repeat(9));
-        System.out.println("  " + "-".repeat(25));
-        System.out.println("   A  B  C  D  E  F  G  H");
+    private String pieceToString(Piece piece) {
+        return piece.getColor().substring(0, 1).toUpperCase() + piece.getSymbol();
     }
-
-    //print a board with all the pieces
 }
