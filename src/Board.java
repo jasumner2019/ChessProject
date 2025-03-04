@@ -34,4 +34,7 @@ public class Board {
     private String pieceToString(Piece piece) {
         return piece.getColor().substring(0, 1).toUpperCase() + piece.getSymbol();
     }
+    public Piece getPieceAt(Position position) {
+        return pieces.get(position);
+    }
 }

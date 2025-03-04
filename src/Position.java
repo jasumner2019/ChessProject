@@ -11,7 +11,17 @@ public record Position(String file, int rank) {
         }
     }
 
-    // Optional: Method to get the position in chess notation
+    // Getter for file
+    public char getFile() {
+        return file.charAt(0);
+    }
+
+    // Getter for rank
+    public int getRank() {
+        return rank;
+    }
+
+    // Method to get the position in chess notation
     public String toChessNotation() {
         return file + rank;
     }

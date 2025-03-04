@@ -30,6 +30,15 @@ abstract class Piece {
     public String getSymbol() {
         return symbol;
     }
+
+    // New abstract method for checking valid moves
+    public abstract boolean isValidMove(Position newPosition, Board board);
+
+    // Helper method to check if a position is within the board
+    protected boolean isWithinBoard(Position position) {
+        return position.getFile() >= 'a' && position.getFile() <= 'h' &&
+                position.getRank() >= 1 && position.getRank() <= 8;
+    }
 }
 
 
